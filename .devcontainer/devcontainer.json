@@ -23,7 +23,7 @@
   "containerEnv": {
     "AWS_REGION": "us-east-1"
   },
-  "postCreateCommand": "pip install -r requirements.txt",
+  "postCreateCommand": "if [ -f requirements.txt ]; then pip install -r requirements.txt; else echo 'Skipping pip install (no requirements.txt)'; fi",
   "remoteUser": "vscode",
   "forwardPorts": [5000, 8000, 3000]
 }
